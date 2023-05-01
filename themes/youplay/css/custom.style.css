@@ -1,0 +1,44 @@
+/* 
+
+Add here your custom css styles Example: p { text-align: center; color: red; } 
+
+*/
+.btn-main{
+      background-color: #410341;
+}
+.btn-main:hover, .btn-main:focus {
+    background-color: #700570;
+}
+.yp_side_drawer ul.sections li.active a {
+    color: #700570 !important;
+}
+a {
+    color:#700570;
+}
+.yp_side_drawer ul.sections li.active a {
+    color: #700570 !important;
+}
+.yp_side_drawer ul.sections li.active a {
+    color:#700570;
+}
+.yp_side_drawer ul.sections li a:before {
+    background: #700570;
+}
+.pt_page_headr .page_head svg {
+    background-color: #700570;
+}
+.article-categories .pt_categories ul li.active a {
+    background-color: #700570;
+}
+a {
+    color: #700570;
+}
+.wo_about_wrapper .hero-overlay {
+    background-color: #700570;
+}
+.hero-overlay {
+    background: #700570;
+}
+.mat_header h1 svg {
+    color: #700570;
+}

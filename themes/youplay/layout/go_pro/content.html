@@ -1,0 +1,97 @@
+<?php if ($pt->user->is_pro ==  0): ?>
+<?php echo PT_LoadPage('third-party/paypal-demo'); ?>
+<div class="pt_go_pro">
+	<div class="go-pro-head">
+		<div><img class="logo" src="{{CONFIG theme_url}}/img/<?php echo ($pt->mode != 'night') ? 'logo' : 'logo-light';?>.png" alt="{{CONFIG title}}"><span>PRO</span></div>
+		<h4>{{LANG buy_pro_pkg}}</h4>
+		<img class="icon" src="{{CONFIG theme_url}}/img/pro.png"/>
+	</div>
+	<div class="go-pro-body">
+		<div class="go-pro-packages">
+			<div class="content go-pro-pkg">
+				<div>
+					<div class="left-block pro-bg">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" fill="currentColor" d="M12 1.25C7.71979 1.25 4.25 4.71979 4.25 9C4.25 11.4799 5.41481 13.6878 7.22718 15.1064L6.25754 21.8939C6.21967 22.159 6.32601 22.4242 6.53656 22.5897C6.74711 22.7552 7.02991 22.7958 7.27854 22.6964L12 20.8078L16.7215 22.6964C16.9701 22.7958 17.2529 22.7552 17.4634 22.5897C17.674 22.4242 17.7803 22.159 17.7425 21.8939L16.7728 15.1064C18.5852 13.6878 19.75 11.4799 19.75 9C19.75 4.71979 16.2802 1.25 12 1.25ZM15.3817 15.9752C14.3598 16.4716 13.2124 16.75 12 16.75C10.7876 16.75 9.64021 16.4716 8.61829 15.9752L7.92592 20.8219L11.7215 19.3036C11.9003 19.2321 12.0997 19.2321 12.2785 19.3036L16.0741 20.8219L15.3817 15.9752ZM5.75 9C5.75 5.54822 8.54822 2.75 12 2.75C15.4518 2.75 18.25 5.54822 18.25 9C18.25 12.4518 15.4518 15.25 12 15.25C8.54822 15.25 5.75 12.4518 5.75 9Z" /></svg>
+						<span class="go-pro-pkg-price">
+							{{LANG pro_mbr}}
+						</span>
+					</div>
+					<div class="go-pro-pkg-features">
+						<div class="go-pro-features-list">
+							<p><?php if ($pt->unlimited_pro == true ) { ?>
+								{{LANG upload_up_no_limit}}
+							<?php } else{ ?>  {{LANG upload_up}} <?php echo $pt->max_upload_users_pro; ?> <?php } ?></p>
+							<p>{{LANG ads_wont_show_up}}</p>
+							<p>{{LANG ur_are_featured}}</p>
+							<p>{{LANG verified_badge}}</p>
+							<?php if ($pt->config->sell_videos_system == 'on') { ?>
+								<p>{{LANG sell_videos}}</p>
+							<?php } ?>
+						</div>
+					</div>
+					<div class="right-block">
+						<h5 class="package-price"><span>{{CURRENCY}}</span><b>{{CONFIG pro_pkg_price}}</b></h5>
+						<div class="go-pro-pkg-purchase">
+							<button class="btn btn-main pro-bg" onclick="PayUsingWallet('pro','show');">
+								{{LANG upgrade}}
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php if ($pt->config->require_subcription == 'off') { ?>
+			<div class="content go-pro-pkg">
+				<div>
+					<div class="left-block free-bg">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z" /></svg>
+						<span class="go-pro-pkg-price">{{LANG free_mbr}}</span> 
+					</div>
+					<div class="go-pro-pkg-features">
+						<div class="go-pro-features-list">
+							<p><?php if ($pt->unlimited_free == true ) { ?>
+								{{LANG upload_up_no_limit}}
+							<?php } else{ ?>  {{LANG upload_up}} <?php echo $pt->max_upload_users_; ?> <?php } ?></p>
+							<p>{{LANG ads_will_show_up}}</p>
+							<p>{{LANG not_featured_videos}}</p>
+							<p>{{LANG no_verified_badge}}</p>
+						</div>
+					</div>
+					<div class="right-block">
+						<h5 class="package-price"><span>{{CURRENCY}}</span><b>0</b></h5>
+						<div class="go-pro-pkg-purchase">
+							<button class="btn btn-main free-bg" onclick="window.location.href= '{{LINK }}'">
+								{{LANG stay_free}}
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php } ?>
+		</div>
+	</div>
+</div>
+
+
+
+<?php else: ?>
+<div class="go-pro-container">
+	<div class="go-pro-head-upgraded">
+		<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+		<h4>{{LANG congratulations}}</h4>
+		<p class="text-center">{{LANG uare_pro}}</p>
+	</div>
+	<div class="go-pro-body-upgraded">
+		<div class="upgraded-features">
+			<p><span><i class="fa fa-check"></i></span> {{LANG upload_1tr_limit}}</p>
+			<p><span><i class="fa fa-check"></i></span> {{LANG ads_wont_show_up}}</p>
+			<p><span><i class="fa fa-check"></i></span> {{LANG ur_are_featured}}</p>
+			<p><span><i class="fa fa-check"></i></span> {{LANG verified_badge}}</p>
+		</div>
+	</div>
+	<div class="go-pro-footer-upgraded">
+		<button class="btn-main btn">
+			<a href="{{LINK }}">{{LANG start_features}}</a>
+		</button>
+	</div>
+</div>
+<?php endif; ?>
